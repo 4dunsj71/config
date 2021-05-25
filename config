@@ -16,12 +16,13 @@ exec_always --no-startup-id picom -bc
 exec --no-startup-id nm-applet
 exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id pa-applet
-exec_always feh --bg-fill ~/Pictures/forest-wallpaper.jpg
+exec_always feh --bg-fill ~/pictures/forest-wallpaper.jpg
 #start up applications
-exec_always --no-startup-id $term -e ~/.config/autostart/bonsaiQuoteStartUp.sh | floating enable
+exec_always --no-startup-id $term -e ~/.config/autostart/bonsaiQuoteStartUp.sh
 #exec_always --no-startup-id $term -e ~/.config/autostart/tai.sh
 exec_always --no-startup-id $term -e ~/.config/autostart/tty.sh
 exec_always --no-startup-id polybar -q main -c ~/.config/polybar/forest/config.ini
+exec_always --no-startup-id $term -e ~/.config/autostart/todo-rs.sh
 #########
 # Binds #
 #########
@@ -36,7 +37,8 @@ bindsym $mod+Print --release exec -no-startup-id "escrotum -sC ~/Pictures/screen
 
 # General binds
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec --no-startup-id dmenu_run
+#bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id rofi -show combi
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
